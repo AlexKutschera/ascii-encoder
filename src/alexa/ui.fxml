@@ -1,59 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TextField fx:id="input_encode" style="-fx-background-color: #caccc9;" />
-       <Button fx:id="button_encode" prefWidth="100.0" style="-fx-background-color: green;" text="ENCODE" textFill="WHITE" GridPane.columnIndex="1" />
-       <Label contentDisplay="TOP" text="ASCII / DEZIMAL" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </GridPane.margin></Label>
-      <Label fx:id="label_ascii" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </GridPane.margin>
-      </Label>
-      <Label text="HEXADEZIMAL" GridPane.rowIndex="2">
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </Label>
-      <Label fx:id="label_hex" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </Label>
-      <Label text="BINÄR" GridPane.rowIndex="3">
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </Label>
-      <Label fx:id="label_binary" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </Label>
-   </children>
-   <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-   </padding>
+<GridPane fx:id="root" prefWidth="270.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <ScrollPane prefWidth="270.0">
+        <GridPane fx:id="ui_root" alignment="center" hgap="5.0" vgap="5.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+            <TextField fx:id="input_encode" prefWidth="244.0" style="-fx-background-color: #caccc9;" GridPane.columnSpan="2" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefWidth="120.0" text="ASCII / DEZIMAL" underline="true" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="label_ascii" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </GridPane.margin>
+            </Label>
+         <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Label text="HEXADEZIMAL" GridPane.rowIndex="4">
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </padding>
+            </Label>
+            <Label fx:id="label_hex" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </padding>
+            </Label>
+         <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <Label text="BINÄR" GridPane.rowIndex="6">
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </padding>
+            </Label>
+            <Label fx:id="label_binary" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <padding>
+                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                </padding>
+            </Label>
+        </GridPane>
+    </ScrollPane>
    <columnConstraints>
-      <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
       <RowConstraints />
    </rowConstraints>
 </GridPane>

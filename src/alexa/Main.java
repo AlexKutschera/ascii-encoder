@@ -12,25 +12,30 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     private static Label label_ascii, label_binary, label_hex;
+    private static TextField input;
+    private static Button button_encode;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
+        int WIDTH = 286;
+
+        Parent root = FXMLLoader.load(Main.class.getResource("ui.fxml"));
+
+        primaryStage.setTitle("ASCII Encoder");
+        primaryStage.setScene(new Scene(root, WIDTH, 124));
+        primaryStage.setMinWidth(WIDTH);
+        primaryStage.setMaxWidth(WIDTH);
+        primaryStage.show();
 
         label_ascii = (Label) root.lookup("#label_ascii");
         label_binary = (Label) root.lookup("#label_binary");
         label_hex = (Label) root.lookup("#label_hex");
 
-        TextField input = (TextField) root.lookup("#input_encode");
-
-        Button encode = (Button) root.lookup("#button_encode");
-        encode.setOnMouseClicked(event -> {
-            doEncode(input.getText());
+        input = (TextField) root.lookup("#input_encode");
+        input.textProperty().addListener((observable, oldValue, newValue) -> {
+            doEncode(newValue);
         });
 
-        primaryStage.setTitle("ASCII Encoder");
-        primaryStage.setScene(new Scene(root, 264, 118));
-        primaryStage.show();
     }
 
 
@@ -39,28 +44,28 @@ public class Main extends Application {
     }
 
     private static void doEncode(String input){
-        if (input.toCharArray().length > 0){
-            char character = input.toCharArray()[0];
 
-            String ascii = "";
-            String binary = "";
-            String hex = "";
+        String ascii = "";
+        String binary = "";
+        String hex = "";
 
+        for (char character:input.toCharArray()) {
             ascii += character + ": ";
             ascii += (int) character;
+            ascii += "\r\n";
 
             binary += character + ": ";
             binary += Integer.toBinaryString(character);
+            binary += "\r\n";
 
             hex += character + ": ";
             hex += Integer.toHexString(character);
-
-            ascii.trim();
-
-            label_ascii.setText(ascii);
-            label_binary.setText(binary);
-            label_hex.setText(hex);
+            hex += "\r\n";
         }
+
+        label_ascii.setText(ascii.trim());
+        label_binary.setText(binary.trim());
+        label_hex.setText(hex.trim());
 
     }
 }
