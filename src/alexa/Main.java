@@ -9,13 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AsciiEncoder extends Application {
+public class Main extends Application {
 
     private static Label label_ascii, label_binary, label_hex;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ascii-encoder.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
 
         label_ascii = (Label) root.lookup("#label_ascii");
         label_binary = (Label) root.lookup("#label_binary");

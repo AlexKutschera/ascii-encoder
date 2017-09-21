@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alexa.Controller">
+<GridPane alignment="center" hgap="5.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="input_encode" style="-fx-background-color: #caccc9;" />
        <Button fx:id="button_encode" prefWidth="100.0" style="-fx-background-color: green;" text="ENCODE" textFill="WHITE" GridPane.columnIndex="1" />
