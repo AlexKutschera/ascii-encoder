@@ -66,8 +66,7 @@ public class Main extends Application {
         }
 
         try {
-            DateFormat format = new SimpleDateFormat("ddMMyyyy_HHmmss");
-            PrintWriter writer = new PrintWriter("ascii-encoded_"+format.format(new Date())+".txt");
+            PrintWriter writer = new PrintWriter("ascii-encoded_"+System.currentTimeMillis()+".txt");
             writer.println("ORIGINAL: "+input);
             writer.println(ascii);
             writer.println(binary);
