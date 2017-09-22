@@ -19,7 +19,6 @@ public class Main extends Application {
 
     private static Label label_ascii, label_binary, label_hex;
     private static TextField input;
-    private static Button button_store;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -38,14 +37,10 @@ public class Main extends Application {
         label_hex = (Label) root.lookup("#label_hex");
 
         input = (TextField) root.lookup("#input_encode");
-        input.textProperty().addListener((observable, oldValue, newValue) -> {
-            encode(newValue);
-        });
+        input.textProperty().addListener((observable, oldValue, newValue) -> encode(newValue));
 
-        button_store = (Button) root.lookup("#button_store");
-        button_store.setOnMouseClicked(event -> {
-            store(input.getText());
-        });
+        Button button_store = (Button) root.lookup("#button_store");
+        button_store.setOnMouseClicked(event -> store(input.getText()));
 
     }
 
@@ -55,19 +50,19 @@ public class Main extends Application {
     }
 
     private static void store(String input){
-        String ascii = "ASCII: ";
-        String binary = "BINÄR: ";
-        String hex = "HEXADEZIMAL: ";
+        StringBuilder ascii = new StringBuilder("ASCII: ");
+        StringBuilder binary = new StringBuilder("BINÄR: ");
+        StringBuilder hex = new StringBuilder("HEXADEZIMAL: ");
 
         for (char character:input.toCharArray()) {
-            ascii += (int) character;
-            ascii += " ";
+            ascii.append((int) character);
+            ascii.append(" ");
 
-            binary += Integer.toBinaryString(character);
-            binary += " ";
+            binary.append(Integer.toBinaryString(character));
+            binary.append(" ");
 
-            hex += Integer.toHexString(character);
-            hex += " ";
+            hex.append(Integer.toHexString(character));
+            hex.append(" ");
         }
 
         try {
@@ -85,27 +80,27 @@ public class Main extends Application {
 
     private static void encode(String input){
 
-        String ascii = "";
-        String binary = "";
-        String hex = "";
+        StringBuilder ascii = new StringBuilder();
+        StringBuilder binary = new StringBuilder();
+        StringBuilder hex = new StringBuilder();
 
         for (char character:input.toCharArray()) {
-            ascii += character + ": ";
-            ascii += (int) character;
-            ascii += "\r\n";
+            ascii.append(character).append(": ");
+            ascii.append((int) character);
+            ascii.append("\r\n");
 
-            binary += character + ": ";
-            binary += Integer.toBinaryString(character);
-            binary += "\r\n";
+            binary.append(character).append(": ");
+            binary.append(Integer.toBinaryString(character));
+            binary.append("\r\n");
 
-            hex += character + ": ";
-            hex += Integer.toHexString(character);
-            hex += "\r\n";
+            hex.append(character).append(": ");
+            hex.append(Integer.toHexString(character));
+            hex.append("\r\n");
         }
 
-        label_ascii.setText(ascii.trim());
-        label_binary.setText(binary.trim());
-        label_hex.setText(hex.trim());
+        label_ascii.setText(ascii.toString().trim());
+        label_binary.setText(binary.toString().trim());
+        label_hex.setText(hex.toString().trim());
 
     }
 }
