@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -8,14 +9,16 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane fx:id="root" prefWidth="270.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
-    <ScrollPane prefWidth="270.0">
+<GridPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <ScrollPane prefWidth="330.0">
         <GridPane fx:id="ui_root" alignment="center" hgap="5.0" vgap="5.0">
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
             <columnConstraints>
+                <ColumnConstraints />
                 <ColumnConstraints />
                 <ColumnConstraints />
             </columnConstraints>
@@ -28,35 +31,39 @@
                 <RowConstraints />
                 <RowConstraints />
             </rowConstraints>
-            <TextField fx:id="input_encode" prefWidth="244.0" style="-fx-background-color: #caccc9;" GridPane.columnSpan="2" />
+            <TextField fx:id="input_encode" prefWidth="200.0" style="-fx-background-color: #caccc9;" GridPane.columnSpan="2" />
+         <Button fx:id="button_store" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: green;" text="SPEICHERN" textFill="WHITE" GridPane.columnIndex="2">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
             <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefWidth="120.0" text="ASCII / DEZIMAL" underline="true" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </GridPane.margin>
             </Label>
-            <Label fx:id="label_ascii" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="label_ascii" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </GridPane.margin>
             </Label>
-         <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+         <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
             <Label text="HEXADEZIMAL" GridPane.rowIndex="4">
                 <padding>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </padding>
             </Label>
-            <Label fx:id="label_hex" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="label_hex" text="0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                 <padding>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </padding>
             </Label>
-         <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+         <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="5" />
             <Label text="BINÄR" GridPane.rowIndex="6">
                 <padding>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </padding>
             </Label>
-            <Label fx:id="label_binary" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Label fx:id="label_binary" text="0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                 <padding>
                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                 </padding>
@@ -64,6 +71,7 @@
         </GridPane>
     </ScrollPane>
    <columnConstraints>
+      <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
